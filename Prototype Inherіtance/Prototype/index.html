@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var Human = function (name){
+            this.name = name;
+            this.age = '24';
+            this.sex = 'Male';
+            this.weight = '80kg';
+        };
+
+        var Worker = function (name){
+            this.name = name;
+            this.job = 'Circus';
+            this.salary = 1000+'$';
+            this.work = function (){
+                this.salary = parseInt(this.salary) +100+'$';
+                alert('Привет, меня зовут ' + this.name + ' и я заработал ' + this.salary + ' и мне '+this.age)
+            }
+        };
+        var Student = function (name){
+            this.name = name;
+            this.education = 'KNY';
+            this.grant = '200$';
+            this.serials = 1;
+            this.view = function (){
+                this.serials += 1
+                alert('Мой вес '+ this.weight)
+            }
+        }
+
+    Worker.prototype = new Human()
+    Student.prototype = new Human();
+
+    var bob = new Worker('Bob');
+    var moo = new Worker('Moo')
+    var rudolf = new Student('Rudolf');
+    var kate = new Student('Kate');
+    kate.view()
+    moo.work()
+
+
+
+
+
+    </script>
+</body>
+</html>
